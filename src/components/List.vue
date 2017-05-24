@@ -1,19 +1,22 @@
 <template>
-  <div id='list'>
-    <div class="item clearfix" v-for="(item, index) in items">
-      <div class="vote">
-        <div class="total">
-          {{ item.vote }}
+  <div>
+    <div id='list'>
+      <div class="item clearfix" v-for="(item, index) in items">
+        <div class="vote">
+          <div class="total">
+            {{ item.vote }}
+          </div>
+          <div class="action">
+            <a href="#" @click.prevent="upVote(item)">&#x25B2;</a>
+            <a href="#" @click.prevent="downVote(item)">&#x25BC;</a>
+          </div>
         </div>
-        <div class="action">
-          <a href="#" @click.prevent="upVote(item)">&#x25B2;</a>
-          <a href="#" @click.prevent="downVote(item)">&#x25BC;</a>
+        <div class="content">
+          {{ item.content }}
         </div>
-      </div>
-      <div class="content">
-        {{ item.content }}
       </div>
     </div>
+    <a href="#" class="add">+</a>
   </div>
 </template>
 <script>
@@ -104,6 +107,7 @@
   }
 </script>
 <style scoped>
+
 #list .item {
   display: block;
   padding: 5px 0;
@@ -144,10 +148,33 @@
 }
 
 #list .item .content {
-  padding-left: 0.5em;
+  font-size: 15px;
   line-height: 28px;
+  padding: 0 0.5em;
   max-width: 80vw;
   float: left;
+}
+
+.add {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  background: #D22028;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 15px;
+  font-size: 28px;
+  line-height: 24px;
+  text-decoration: none;
+  border-radius: 50%;
+  border: 1px solid #DDD;
+  color: #FFF;
+}
+
+.add:hover {
+  color: #666666;
+  background: #DFDFDF;
 }
 
 </style>

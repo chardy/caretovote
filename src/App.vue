@@ -15,6 +15,10 @@ export default {
 
 <style>
 
+body {
+  overflow: hidden;
+}
+
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -57,6 +61,9 @@ export default {
 .nav h1 {
   font-size: 18px;
   line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: #DA343C;
 }
 
 </style>
