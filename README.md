@@ -2,6 +2,19 @@
 
 > Reddit Clone for Carousell
 
+- There are 10 lists available
+- You can add more click (+) then submit the form
+- The list will be sorted on descending order based on total vote count
+
+## Tech
+
+- HTML/CSS
+- VueJS
+
+Note: No bootstrap, no fancy CSS framework, just plain CSS and VueJS
+
+Why VueJS: Simple, easy and straight-forward syntax of writing.
+
 ## Build Setup
 
 ``` bash
@@ -17,5 +30,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
