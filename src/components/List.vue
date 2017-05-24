@@ -205,7 +205,7 @@
   font-size: 15px;
   line-height: 28px;
   padding: 0 0.5em;
-  max-width: 80vw;
+  max-width: 70vw;
   float: left;
 }
 

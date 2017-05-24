@@ -125,7 +125,7 @@ body {
   background: #fff;
   border-radius: 5px;
   padding: 1em 2em;
-  height: 25%;
+  min-height: 235px;
 }
 
 .modal__close {
