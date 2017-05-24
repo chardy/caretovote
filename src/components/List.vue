@@ -22,7 +22,7 @@
       <label class="modal__bg" for="modal-add"></label>
       <div class="modal__inner">
         <label class="modal__close" for="modal-add"></label>
-        <h3>Add your entry</h3>
+        <h3 class="title">Post your Entry</h3>
         <label>Entry</label>
         <textarea v-model='tempContent'></textarea>
         <br>
@@ -155,6 +155,13 @@
 </script>
 <style scoped>
 
+.title {
+  line-height: 16px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
 #list .item {
   display: block;
   padding: 5px 0;
@@ -203,7 +210,7 @@
 }
 
 .add {
-  position: absolute;
+  position: fixed;
   bottom: 1em;
   right: 1em;
   background: #D22028;

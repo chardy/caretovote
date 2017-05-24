@@ -16,7 +16,7 @@ export default {
 <style>
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -125,7 +125,7 @@ body {
   background: #fff;
   border-radius: 5px;
   padding: 1em 2em;
-  height: 30%;
+  height: 25%;
 }
 
 .modal__close {
