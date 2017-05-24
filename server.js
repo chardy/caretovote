@@ -1,8 +1,18 @@
 var express = require('express');
-var path = require('path');
-var serveStatic = require('serve-static')
-app = express();
-app.use(serveStatic(path.join(__dirname, 'dist')));
-var port = process.env.PORT || 5000;
-app.listen(port);
-console.log('server started '+port);
+var app = express();
+
+app.set('port', (process.env.PORT || 5000));
+
+app.use(express.static(__dirname + '/dist'));
+
+// views is directory for all template files
+// app.set('views', __dirname + '/views');
+// app.set('view engine', 'ejs');
+
+app.get('/', function(request, response) {
+  response.render('index.html');
+});
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
