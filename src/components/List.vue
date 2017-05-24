@@ -17,16 +17,19 @@
       </div>
     </div>
     <label class="add" for="modal-add">+</label>
-    <input class="modal-state" id="modal-add" type="checkbox" />
+    <input class="modal-state" id="modal-add" type="checkbox" v-model="modalState"/>
     <div class="modal">
       <label class="modal__bg" for="modal-add"></label>
       <div class="modal__inner">
         <label class="modal__close" for="modal-add"></label>
         <h3>Add your entry</h3>
         <label>Entry</label>
-        <textarea></textarea>
+        <textarea v-model='tempContent'></textarea>
         <br>
-        <a href="#" class="button">Submit</a>
+        <div class="action-btn">
+          <span class="count">{{ characterCount }}</span>
+          <a href="#" class="button" @click.prevent="addItem">Submit</a>
+        </div>    
       </div>
     </div>
   </div>
@@ -36,6 +39,8 @@
     name: 'List',
     data () {
       return {
+        tempContent: '',
+        modalState: '',
         items: [
           {
             id: 1,
@@ -101,24 +106,49 @@
       }
     },
     methods: {
-      upVote: (item) => {
+      upVote (item) {
         if (item.vote >= 0) {
           item.vote += 1
         } else {
           item.vote = 0
         }
       },
-      downVote: (item) => {
+      downVote (item) {
         if (item.vote > 0) {
           item.vote -= 1
         } else {
           item.vote = 0
         }
+      },
+      addItem () {
+        let _this = this
+        _this.items.push({
+          id: 10,
+          vote: 0,
+          content: _this.tempContent,
+          timestamp: new Date().valueOf()
+        })
+        _this.tempContent = ''
+        _this.modalState = ''
       }
     },
     computed: {
       popularItems: function () {
         return window._.sortBy(this.items, ['vote']).reverse()
+      },
+      characterCount: function () {
+        var length = this.tempContent.split('').length
+        var maxCount = 255
+        if ((length - 1) > maxCount) {
+          this.tempContent = this.tempContent.substring(0, maxCount)
+          length = maxCount
+        }
+        return length
+      }
+    },
+    watch: {
+      modalState: function (val) {
+        this.tempContent = ''
       }
     }
   }
@@ -211,6 +241,7 @@ textarea {
   background-position: bottom right;
   background-repeat: no-repeat;
   border-radius: 5px;
+  font-size: 15px;
 }
 
 .button {
@@ -220,6 +251,16 @@ textarea {
   border-radius: 5px;
   text-decoration: none;
   font-weight: 500;
+  margin-right: -12px;
+}
+
+.action-btn {
+  float: right;
+}
+
+.action-btn .count {
+  font-size: 14px;
+  margin-right: 10px;
 }
 
 </style>

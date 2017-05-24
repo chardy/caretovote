@@ -49,14 +49,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10000;
   background: #FFFFFF;
   height: 44px;
   border-bottom: 1px solid #DDD;
   text-align: center;
   -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1), 0px 1px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1), 0px 1px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1), 0px 1px 0px rgba(0, 0, 0, 0.1)
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1), 0px 1px 0px rgba(0, 0, 0, 0.1);
 }
 
 .nav h1 {
@@ -126,13 +125,13 @@ body {
   background: #fff;
   border-radius: 5px;
   padding: 1em 2em;
-  height: 50%;
+  height: 30%;
 }
 
 .modal__close {
   position: absolute;
-  right: 1em;
-  top: 1em;
+  right: 1.5em;
+  top: 1.5em;
   width: 1.1em;
   height: 1.1em;
   cursor: pointer;
@@ -143,7 +142,7 @@ body {
   content: '';
   position: absolute;
   width: 2px;
-  height: 1.5em;
+  height: 2em;
   background: #ccc;
   display: block;
   transform: rotate(45deg);
@@ -165,7 +164,7 @@ body {
   
   .modal__inner {
     width: 90%;
-    height: 90%;
+    height: 30%;
     box-sizing: border-box;
   }
 }
