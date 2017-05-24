@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id='list'>
-      <div class="item clearfix" v-for="(item, index) in items">
+      <div class="item clearfix" v-for="(item, index) in popularItems">
         <div class="vote">
           <div class="total">
             {{ item.vote }}
@@ -114,6 +114,11 @@
         } else {
           item.vote = 0
         }
+      }
+    },
+    computed: {
+      popularItems: function () {
+        return window._.sortBy(this.items, ['vote']).reverse()
       }
     }
   }
