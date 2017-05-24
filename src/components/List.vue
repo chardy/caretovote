@@ -16,7 +16,19 @@
         </div>
       </div>
     </div>
-    <a href="#" class="add">+</a>
+    <label class="add" for="modal-add">+</label>
+    <input class="modal-state" id="modal-add" type="checkbox" />
+    <div class="modal">
+      <label class="modal__bg" for="modal-add"></label>
+      <div class="modal__inner">
+        <label class="modal__close" for="modal-add"></label>
+        <h3>Add your entry</h3>
+        <label>Entry</label>
+        <textarea></textarea>
+        <br>
+        <a href="#" class="button">Submit</a>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -172,9 +184,37 @@
   color: #FFF;
 }
 
-.add:hover {
+.add:hover, .button:hover {
   color: #666666;
   background: #DFDFDF;
+}
+
+label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  height: 80px;
+  border: 1px solid #CCC;
+  padding: 5px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+
+.button {
+  padding: 0.75em 2em;
+  color: #FFFFFF;
+  background: #D22028;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 </style>
