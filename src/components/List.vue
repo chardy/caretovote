@@ -1,13 +1,13 @@
 <template>
   <div id='list'>
-    <div class="item clearfix" v-for="item in items" v-component="item">
+    <div class="item clearfix" v-for="(item, index) in items">
       <div class="vote">
         <div class="total">
           {{ item.vote }}
         </div>
         <div class="action">
-          <a href="#">&#x25B2;</a>
-          <a href="#">&#x25BC;</a>
+          <a href="#" @click.prevent="upVote(item)">&#x25B2;</a>
+          <a href="#" @click.prevent="downVote(item)">&#x25BC;</a>
         </div>
       </div>
       <div class="content">
@@ -18,7 +18,7 @@
 </template>
 <script>
   export default {
-    name: 'hello',
+    name: 'List',
     data () {
       return {
         items: [
@@ -82,16 +82,22 @@
             content: 'Jamboard is now available ',
             timestamp: 1495599850938
           }
-
         ]
       }
     },
-    components: {
-      item: {
-        computed: {
-          count: () => {
-            return this.upvote - this.downvote
-          }
+    methods: {
+      upVote: (item) => {
+        if (item.vote >= 0) {
+          item.vote += 1
+        } else {
+          item.vote = 0
+        }
+      },
+      downVote: (item) => {
+        if (item.vote > 0) {
+          item.vote -= 1
+        } else {
+          item.vote = 0
         }
       }
     }
